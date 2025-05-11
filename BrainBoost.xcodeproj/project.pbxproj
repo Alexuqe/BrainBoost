@@ -6,30 +6,37 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE9BF23A2DD0D5FB00152118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2312DD0D5FB00152118 /* Assets.xcassets */; };
+		CE9BF23C2DD0D5FB00152118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2342DD0D5FB00152118 /* LaunchScreen.storyboard */; };
+		CE9BF23E2DD0D5FB00152118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */; };
+		CE9BF23F2DD0D5FB00152118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2372DD0D5FB00152118 /* SceneDelegate.swift */; };
+		CE9BF2402DD0D5FB00152118 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2382DD0D5FB00152118 /* MainViewController.swift */; };
+		CE9BF2472DD0DAFA00152118 /* Manrope-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2462DD0DAFA00152118 /* Manrope-Variable.ttf */; };
+		CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2482DD0DB7200152118 /* FontNameManager.swift */; };
+		CE9BF24B2DD0DD6200152118 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF24A2DD0DD5E00152118 /* Font.swift */; };
+		CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF24D2DD0E20000152118 /* ScoreView.swift */; };
+		CE9BF2512DD0EF7200152118 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2502DD0EF5300152118 /* Button.swift */; };
+		CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */; };
+		CE9BF2572DD1001D00152118 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2562DD1001900152118 /* ButtonsView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CE9BF2182DD0D5EF00152118 /* BrainBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE9BF2312DD0D5FB00152118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE9BF2322DD0D5FB00152118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9BF2332DD0D5FB00152118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE9BF2372DD0D5FB00152118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE9BF2382DD0D5FB00152118 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE9BF2462DD0DAFA00152118 /* Manrope-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Variable.ttf"; sourceTree = "<group>"; };
+		CE9BF2482DD0DB7200152118 /* FontNameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNameManager.swift; sourceTree = "<group>"; };
+		CE9BF24A2DD0DD5E00152118 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		CE9BF24D2DD0E20000152118 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		CE9BF2502DD0EF5300152118 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
+		CE9BF2562DD1001900152118 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CE9BF22A2DD0D5F400152118 /* Exceptions for "BrainBoost" folder in "BrainBoost" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = CE9BF2172DD0D5EF00152118 /* BrainBoost */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CE9BF21A2DD0D5EF00152118 /* BrainBoost */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CE9BF22A2DD0D5F400152118 /* Exceptions for "BrainBoost" folder in "BrainBoost" target */,
-			);
-			path = BrainBoost;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE9BF2152DD0D5EF00152118 /* Frameworks */ = {
@@ -45,7 +52,7 @@
 		CE9BF20F2DD0D5EF00152118 = {
 			isa = PBXGroup;
 			children = (
-				CE9BF21A2DD0D5EF00152118 /* BrainBoost */,
+				CE9BF2392DD0D5FB00152118 /* BrainBoost */,
 				CE9BF2192DD0D5EF00152118 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +63,98 @@
 				CE9BF2182DD0D5EF00152118 /* BrainBoost.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CE9BF2392DD0D5FB00152118 /* BrainBoost */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2412DD0D62700152118 /* App */,
+				CE9BF2422DD0D64300152118 /* ViewControllers */,
+				CE9BF24C2DD0E1FA00152118 /* Components */,
+				CE9BF2442DD0D65F00152118 /* LaunchScreen */,
+				CE9BF2432DD0D65400152118 /* Resources */,
+			);
+			path = BrainBoost;
+			sourceTree = "<group>";
+		};
+		CE9BF2412DD0D62700152118 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */,
+				CE9BF2372DD0D5FB00152118 /* SceneDelegate.swift */,
+				CE9BF2322DD0D5FB00152118 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE9BF2422DD0D64300152118 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2382DD0D5FB00152118 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE9BF2432DD0D65400152118 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2452DD0DAC200152118 /* Font */,
+				CE9BF2312DD0D5FB00152118 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE9BF2442DD0D65F00152118 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2342DD0D5FB00152118 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		CE9BF2452DD0DAC200152118 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2482DD0DB7200152118 /* FontNameManager.swift */,
+				CE9BF24A2DD0DD5E00152118 /* Font.swift */,
+				CE9BF2462DD0DAFA00152118 /* Manrope-Variable.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		CE9BF24C2DD0E1FA00152118 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2552DD1000A00152118 /* ButtonsView */,
+				CE9BF2522DD0EF7700152118 /* Buttons */,
+				CE9BF24F2DD0E59F00152118 /* ScoreView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE9BF24F2DD0E59F00152118 /* ScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF24D2DD0E20000152118 /* ScoreView.swift */,
+			);
+			path = ScoreView;
+			sourceTree = "<group>";
+		};
+		CE9BF2522DD0EF7700152118 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2502DD0EF5300152118 /* Button.swift */,
+				CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CE9BF2552DD1000A00152118 /* ButtonsView */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2562DD1001900152118 /* ButtonsView.swift */,
+			);
+			path = ButtonsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +171,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CE9BF21A2DD0D5EF00152118 /* BrainBoost */,
 			);
 			name = BrainBoost;
 			packageProductDependencies = (
@@ -122,6 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9BF23A2DD0D5FB00152118 /* Assets.xcassets in Resources */,
+				CE9BF23C2DD0D5FB00152118 /* LaunchScreen.storyboard in Resources */,
+				CE9BF2472DD0DAFA00152118 /* Manrope-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +231,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9BF23E2DD0D5FB00152118 /* AppDelegate.swift in Sources */,
+				CE9BF24B2DD0DD6200152118 /* Font.swift in Sources */,
+				CE9BF23F2DD0D5FB00152118 /* SceneDelegate.swift in Sources */,
+				CE9BF2402DD0D5FB00152118 /* MainViewController.swift in Sources */,
+				CE9BF2512DD0EF7200152118 /* Button.swift in Sources */,
+				CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */,
+				CE9BF2572DD1001D00152118 /* ButtonsView.swift in Sources */,
+				CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */,
+				CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE9BF2342DD0D5FB00152118 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE9BF2332DD0D5FB00152118 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE9BF22C2DD0D5F400152118 /* Debug */ = {
@@ -147,12 +266,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24Q9WM75S6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BrainBoost/Info.plist;
+				INFOPLIST_FILE = BrainBoost/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -160,9 +279,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlexHalushko.BrainBoost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -175,12 +298,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24Q9WM75S6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BrainBoost/Info.plist;
+				INFOPLIST_FILE = BrainBoost/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -188,9 +311,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlexHalushko.BrainBoost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
