@@ -18,7 +18,7 @@
 		CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF24D2DD0E20000152118 /* ScoreView.swift */; };
 		CE9BF2512DD0EF7200152118 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2502DD0EF5300152118 /* Button.swift */; };
 		CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */; };
-		CE9BF2572DD1001D00152118 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2562DD1001900152118 /* ButtonsView.swift */; };
+		CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2562DD1001900152118 /* ButtonsStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		CE9BF24D2DD0E20000152118 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		CE9BF2502DD0EF5300152118 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
-		CE9BF2562DD1001900152118 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		CE9BF2562DD1001900152118 /* ButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 		CE9BF24C2DD0E1FA00152118 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE9BF2552DD1000A00152118 /* ButtonsView */,
+				CE9BF2552DD1000A00152118 /* ButtonsStackView */,
 				CE9BF2522DD0EF7700152118 /* Buttons */,
 				CE9BF24F2DD0E59F00152118 /* ScoreView */,
 			);
@@ -149,12 +149,12 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		CE9BF2552DD1000A00152118 /* ButtonsView */ = {
+		CE9BF2552DD1000A00152118 /* ButtonsStackView */ = {
 			isa = PBXGroup;
 			children = (
-				CE9BF2562DD1001900152118 /* ButtonsView.swift */,
+				CE9BF2562DD1001900152118 /* ButtonsStackView.swift */,
 			);
-			path = ButtonsView;
+			path = ButtonsStackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +237,7 @@
 				CE9BF2402DD0D5FB00152118 /* MainViewController.swift in Sources */,
 				CE9BF2512DD0EF7200152118 /* Button.swift in Sources */,
 				CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */,
-				CE9BF2572DD1001D00152118 /* ButtonsView.swift in Sources */,
+				CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */,
 				CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */,
 				CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */,
 			);

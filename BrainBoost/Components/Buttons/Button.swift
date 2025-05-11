@@ -47,8 +47,8 @@ final class Button: UIButton {
         self.style = style
         super.init(frame: .zero)
 
-        setupButton()
         setupLayout()
+        setupButton()
         setupConstraints()
     }
 
@@ -66,20 +66,23 @@ final class Button: UIButton {
     }
 
     func setImage(imageView: UIImage?) {
-        guard let imageView else { return }
-
-        image.image = imageView
-        image.tintColor = style.imageTintColor
+        if let imageView  {
+            image.image = imageView
+            image.tintColor = style.imageTintColor
+        }
     }
 
     private func setupButton() {
-        guard let title = style.title, let image = style.image else { return }
-
         backgroundColor = style.backgroundColor
         layer.cornerRadius = 15
+        
+        if let title = style.title {
+            setTitle(title: title)
+        }
 
-        setTitle(title: title)
-        setImage(imageView: image)
+        if let image = style.image {
+            setImage(imageView: image)
+        }
 
         addAction(UIAction { _ in self.onTap?() }, for: .touchUpInside)
     }
@@ -89,7 +92,6 @@ final class Button: UIButton {
 
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(image)
-
     }
 
     private func setupConstraints() {
@@ -109,4 +111,8 @@ final class Button: UIButton {
         backgroundColor = isEnabled ? style.backgroundColor : style.disabledBackgroundColor
         alpha = alphaWhenTouch
     }
+}
+
+#Preview {
+    Button()
 }

@@ -1,8 +1,8 @@
 import UIKit
 
-final class ButtonsView: UIView {
+final class ButtonsStackView: UIStackView {
 
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.spacing = 16
@@ -11,7 +11,7 @@ final class ButtonsView: UIView {
         return stack
     }()
 
-    private let easyButton: Button = {
+    private lazy var easyButton: Button = {
         let button = Button(style: .easyDifficultyButton)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.onTap = {
@@ -20,7 +20,7 @@ final class ButtonsView: UIView {
         return button
     }()
 
-    private let mediumButton: Button = {
+    private lazy var mediumButton: Button = {
         let button = Button(style: .mediumDifficultyButton)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.onTap = {
@@ -29,7 +29,7 @@ final class ButtonsView: UIView {
         return button
     }()
 
-    private let hardButton: Button = {
+    private lazy var hardButton: Button = {
         let button = Button(style: .hardDifficultyButton)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.onTap = {
@@ -44,26 +44,21 @@ final class ButtonsView: UIView {
         setupView()
         setupLayouts()
     }
-
-    required init?(coder: NSCoder) {
+    
+    required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setupView() {
-        backgroundColor = .buttonsBackground
+        axis = .horizontal
+        spacing = 16
+        distribution = .fillEqually
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
     private func setupLayouts() {
-        addSubview(stackView)
-
-        stackView.addArrangedSubview(easyButton)
-        stackView.addArrangedSubview(mediumButton)
-        stackView.addArrangedSubview(hardButton)
+        addArrangedSubview(easyButton)
+        addArrangedSubview(mediumButton)
+        addArrangedSubview(hardButton)
     }
-
-
-}
-
-#Preview {
-    ButtonsView()
 }

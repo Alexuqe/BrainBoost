@@ -17,7 +17,7 @@ extension ButtonsStyle {
         image: nil,
         backgroundColor: .secondaryView,
         disabledBackgroundColor: .secondaryView.withAlphaComponent(0.5),
-        textColor: .white,
+        textColor: .black,
         imageTintColor: nil
     )
 
