@@ -65,6 +65,10 @@ final class Button: UIButton {
         label.attributedText = NSAttributedString(string: title, attributes: attribute)
     }
 
+    func setTextColor(_ color: UIColor) {
+        label.textColor = color
+    }
+
     func setImage(imageView: UIImage?) {
         if let imageView  {
             image.image = imageView
@@ -84,7 +88,7 @@ final class Button: UIButton {
             setImage(imageView: image)
         }
 
-        addAction(UIAction { _ in self.onTap?() }, for: .touchUpInside)
+        addAction(UIAction { [weak self] _ in self?.onTap?() }, for: .touchUpInside)
     }
 
     private func setupLayout() {
@@ -111,8 +115,4 @@ final class Button: UIButton {
         backgroundColor = isEnabled ? style.backgroundColor : style.disabledBackgroundColor
         alpha = alphaWhenTouch
     }
-}
-
-#Preview {
-    Button()
 }

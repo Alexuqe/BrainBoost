@@ -19,6 +19,7 @@
 		CE9BF2512DD0EF7200152118 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2502DD0EF5300152118 /* Button.swift */; };
 		CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */; };
 		CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2562DD1001900152118 /* ButtonsStackView.swift */; };
+		CE9BF25A2DD24A0D00152118 /* DifficultySegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CE9BF2502DD0EF5300152118 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
 		CE9BF2562DD1001900152118 /* ButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStackView.swift; sourceTree = "<group>"; };
+		CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySegmented.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		CE9BF24C2DD0E1FA00152118 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE9BF2582DD249EE00152118 /* DifficultySegmented */,
 				CE9BF2552DD1000A00152118 /* ButtonsStackView */,
 				CE9BF2522DD0EF7700152118 /* Buttons */,
 				CE9BF24F2DD0E59F00152118 /* ScoreView */,
@@ -155,6 +158,14 @@
 				CE9BF2562DD1001900152118 /* ButtonsStackView.swift */,
 			);
 			path = ButtonsStackView;
+			sourceTree = "<group>";
+		};
+		CE9BF2582DD249EE00152118 /* DifficultySegmented */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */,
+			);
+			path = DifficultySegmented;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				CE9BF23F2DD0D5FB00152118 /* SceneDelegate.swift in Sources */,
 				CE9BF2402DD0D5FB00152118 /* MainViewController.swift in Sources */,
 				CE9BF2512DD0EF7200152118 /* Button.swift in Sources */,
+				CE9BF25A2DD24A0D00152118 /* DifficultySegmented.swift in Sources */,
 				CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */,
 				CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */,
 				CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */,

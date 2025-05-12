@@ -2,6 +2,12 @@ import UIKit
 
 final class ScoreView: UIView {
 
+    var setTitle: String = "Score"  {
+        willSet {
+            scoreLabel.text = newValue
+        }
+    }
+
     private let scoreLabel: UILabel = {
         let label = UILabel()
         label.font = Font.heading.font

@@ -6,7 +6,7 @@ struct ButtonsStyle {
 
     let backgroundColor: UIColor
     let disabledBackgroundColor: UIColor
-    let textColor: UIColor?
+    let textColor: UIColor
     let imageTintColor: UIColor?
 }
 
@@ -53,7 +53,7 @@ extension ButtonsStyle {
         image: UIImage(),
         backgroundColor: .main,
         disabledBackgroundColor: .main.withAlphaComponent(0.7),
-        textColor: nil,
+        textColor: .clear,
         imageTintColor: .white
     )
 }

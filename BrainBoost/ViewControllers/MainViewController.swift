@@ -2,17 +2,23 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
-    private let scoreView: UIView = {
+    private var currentPosition: DifficultySegmented.Selection = .easy
+
+    private lazy var scoreView: ScoreView = {
         let view = ScoreView(frame: .zero)
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private let difficultyButtons: UIStackView = {
-        let view = ButtonsStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private lazy var segmentedController: DifficultySegmented = {
+        let segmentedControl = DifficultySegmented()
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.toggleTimer = { [weak self] selection in
+            self?.switchTime(to: selection)
+            print(selection)
+        }
+        return segmentedControl
     }()
 
     private let gameButtonsBackground: UIView = {
@@ -27,14 +33,28 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .main
+        switchTime(to: .easy)
 
         setupLayout()
         setupConstraints()
     }
 
+    private func switchTime(to selection: DifficultySegmented.Selection) {
+        currentPosition = selection
+        
+        switch selection {
+            case .easy:
+                scoreView.setTitle = "50"
+            case .medium:
+                scoreView.setTitle = "30"
+            case .hard:
+                scoreView.setTitle = "15"
+        }
+    }
+
     private func setupLayout() {
         view.addSubview(scoreView)
-        view.addSubview(difficultyButtons)
+        view.addSubview(segmentedController)
         view.addSubview(gameButtonsBackground)
     }
 
@@ -45,9 +65,9 @@ final class MainViewController: UIViewController {
             scoreView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             scoreView.heightAnchor.constraint(equalToConstant: 60),
 
-            difficultyButtons.topAnchor.constraint(equalTo: scoreView.bottomAnchor, constant: 30),
-            difficultyButtons.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            difficultyButtons.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            segmentedController.topAnchor.constraint(equalTo: scoreView.bottomAnchor, constant: 30),
+            segmentedController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            segmentedController.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
             gameButtonsBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             gameButtonsBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
