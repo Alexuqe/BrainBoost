@@ -103,8 +103,11 @@ final class DifficultySegmented: UIView {
                 unselectedButton = [easyButton, mediumButton]
         }
 
-        selectedLeadingConstraints?.constant = selectedButton.frame.origin.x - easyButton.frame.origin.x - 5
-        selectedTrailingConstraints?.constant = selectedButton.frame.origin.x + easyButton.frame.origin.x + 5
+        let selectedLeading = selectedButton.frame.origin.x - easyButton.frame.origin.x - 5
+        let selectedTrailing = selectedButton.frame.origin.x + easyButton.frame.origin.x + 5
+
+        selectedLeadingConstraints?.constant = selectedLeading
+        selectedTrailingConstraints?.constant = selectedTrailing
 
         UIView.animate(
             withDuration: 0.3,
@@ -149,7 +152,6 @@ final class DifficultySegmented: UIView {
         selectedTrailingConstraints?.isActive = true
     }
 }
-
 
 #Preview {
     DifficultySegmented()

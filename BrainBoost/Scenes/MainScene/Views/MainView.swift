@@ -57,9 +57,11 @@ final class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupButtonActions() {
+    private func setupButtonActions() {
         gameButtonsStack.arrangedSubviews.enumerated().forEach { stackIndex, stack in
-            (stack as? ButtonsStackView)?.onTapButton = { [weak self] buttonIndex in
+            guard let buttonStack = stack as? ButtonsStackView else { return }
+
+            buttonStack.onTapButton = { [weak self] buttonIndex in
                 self?.onButtonTap?(stackIndex, buttonIndex)
             }
         }
