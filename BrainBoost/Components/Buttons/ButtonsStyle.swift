@@ -6,8 +6,9 @@ struct ButtonsStyle {
 
     let backgroundColor: UIColor
     let disabledBackgroundColor: UIColor
-    let textColor: UIColor
+    let textColor: UIColor?
     let imageTintColor: UIColor?
+    let font: UIFont?
 }
 
 extension ButtonsStyle {
@@ -18,7 +19,8 @@ extension ButtonsStyle {
         backgroundColor: .secondaryView,
         disabledBackgroundColor: .secondaryView.withAlphaComponent(0.5),
         textColor: .black,
-        imageTintColor: nil
+        imageTintColor: nil,
+        font: Font.caption.font
     )
 
     static let mediumDifficultyButton = ButtonsStyle(
@@ -27,7 +29,8 @@ extension ButtonsStyle {
         backgroundColor: .secondaryView,
         disabledBackgroundColor: .secondaryView.withAlphaComponent(0.5),
         textColor: .white,
-        imageTintColor: nil
+        imageTintColor: nil,
+        font: Font.caption.font
     )
 
     static let hardDifficultyButton = ButtonsStyle(
@@ -36,7 +39,8 @@ extension ButtonsStyle {
         backgroundColor: .secondaryView,
         disabledBackgroundColor: .secondaryView.withAlphaComponent(0.5),
         textColor: .white,
-        imageTintColor: nil
+        imageTintColor: nil,
+        font: Font.caption.font
     )
 
     static let numbersButton = ButtonsStyle(
@@ -45,7 +49,8 @@ extension ButtonsStyle {
         backgroundColor: .main,
         disabledBackgroundColor: .main.withAlphaComponent(0.7),
         textColor: .white,
-        imageTintColor: nil
+        imageTintColor: nil,
+        font: Font.number.font
     )
 
     static let imagesButton = ButtonsStyle(
@@ -54,6 +59,7 @@ extension ButtonsStyle {
         backgroundColor: .main,
         disabledBackgroundColor: .main.withAlphaComponent(0.7),
         textColor: .clear,
-        imageTintColor: .white
+        imageTintColor: .white,
+        font: nil
     )
 }

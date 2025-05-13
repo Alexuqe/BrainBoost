@@ -103,8 +103,8 @@ final class DifficultySegmented: UIView {
                 unselectedButton = [easyButton, mediumButton]
         }
 
-        selectedLeadingConstraints?.constant = selectedButton.frame.origin.x - easyButton.frame.origin.x - 10
-        selectedTrailingConstraints?.constant = selectedButton.frame.origin.x + easyButton.frame.origin.x + 10
+        selectedLeadingConstraints?.constant = selectedButton.frame.origin.x - easyButton.frame.origin.x - 5
+        selectedTrailingConstraints?.constant = selectedButton.frame.origin.x + easyButton.frame.origin.x + 5
 
         UIView.animate(
             withDuration: 0.3,
@@ -127,14 +127,13 @@ final class DifficultySegmented: UIView {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: viewHeight),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
 
-            selectedView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -10),
-            selectedView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10)
+            selectedView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -5),
+            selectedView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5)
         ])
 
         selectedLeadingConstraints = selectedView.leadingAnchor.constraint(

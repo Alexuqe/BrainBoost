@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE8835CD2DD3C5C500C1C237 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835CC2DD3C5C200C1C237 /* MainView.swift */; };
+		CE8835CF2DD3D59800C1C237 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835CE2DD3D59400C1C237 /* TimerView.swift */; };
 		CE9BF23A2DD0D5FB00152118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2312DD0D5FB00152118 /* Assets.xcassets */; };
 		CE9BF23C2DD0D5FB00152118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2342DD0D5FB00152118 /* LaunchScreen.storyboard */; };
 		CE9BF23E2DD0D5FB00152118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE8835CC2DD3C5C200C1C237 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CE8835CE2DD3D59400C1C237 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		CE9BF2182DD0D5EF00152118 /* BrainBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9BF2312DD0D5FB00152118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE8835CA2DD3C59700C1C237 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BF2382DD0D5FB00152118 /* MainViewController.swift */,
+				CE8835CB2DD3C5AC00C1C237 /* Views */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		CE8835CB2DD3C5AC00C1C237 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE8835CC2DD3C5C200C1C237 /* MainView.swift */,
+				CE9BF24D2DD0E20000152118 /* ScoreView.swift */,
+				CE9BF2562DD1001900152118 /* ButtonsStackView.swift */,
+				CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */,
+				CE8835CE2DD3D59400C1C237 /* TimerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE9BF20F2DD0D5EF00152118 = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9BF2412DD0D62700152118 /* App */,
-				CE9BF2422DD0D64300152118 /* ViewControllers */,
+				CE9BF2422DD0D64300152118 /* Scenes */,
 				CE9BF24C2DD0E1FA00152118 /* Components */,
 				CE9BF2442DD0D65F00152118 /* LaunchScreen */,
 				CE9BF2432DD0D65400152118 /* Resources */,
@@ -89,12 +114,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		CE9BF2422DD0D64300152118 /* ViewControllers */ = {
+		CE9BF2422DD0D64300152118 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE9BF2382DD0D5FB00152118 /* MainViewController.swift */,
+				CE8835CA2DD3C59700C1C237 /* MainScene */,
 			);
-			path = ViewControllers;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		CE9BF2432DD0D65400152118 /* Resources */ = {
@@ -127,20 +152,9 @@
 		CE9BF24C2DD0E1FA00152118 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE9BF2582DD249EE00152118 /* DifficultySegmented */,
-				CE9BF2552DD1000A00152118 /* ButtonsStackView */,
 				CE9BF2522DD0EF7700152118 /* Buttons */,
-				CE9BF24F2DD0E59F00152118 /* ScoreView */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		CE9BF24F2DD0E59F00152118 /* ScoreView */ = {
-			isa = PBXGroup;
-			children = (
-				CE9BF24D2DD0E20000152118 /* ScoreView.swift */,
-			);
-			path = ScoreView;
 			sourceTree = "<group>";
 		};
 		CE9BF2522DD0EF7700152118 /* Buttons */ = {
@@ -150,22 +164,6 @@
 				CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		CE9BF2552DD1000A00152118 /* ButtonsStackView */ = {
-			isa = PBXGroup;
-			children = (
-				CE9BF2562DD1001900152118 /* ButtonsStackView.swift */,
-			);
-			path = ButtonsStackView;
-			sourceTree = "<group>";
-		};
-		CE9BF2582DD249EE00152118 /* DifficultySegmented */ = {
-			isa = PBXGroup;
-			children = (
-				CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */,
-			);
-			path = DifficultySegmented;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +246,9 @@
 				CE9BF2402DD0D5FB00152118 /* MainViewController.swift in Sources */,
 				CE9BF2512DD0EF7200152118 /* Button.swift in Sources */,
 				CE9BF25A2DD24A0D00152118 /* DifficultySegmented.swift in Sources */,
+				CE8835CF2DD3D59800C1C237 /* TimerView.swift in Sources */,
 				CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */,
+				CE8835CD2DD3C5C500C1C237 /* MainView.swift in Sources */,
 				CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */,
 				CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */,
 				CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */,

@@ -57,9 +57,13 @@ final class Button: UIButton {
     }
 
     func setTitle(title: String) {
+        guard let font = style.font,
+              let color = style.textColor
+        else { return }
+
         let attribute: [NSAttributedString.Key : Any] = [
-            .font: Font.caption.font,
-            .foregroundColor: UIColor.white
+            .font: font,
+            .foregroundColor: color
         ]
 
         label.attributedText = NSAttributedString(string: title, attributes: attribute)
@@ -104,7 +108,7 @@ final class Button: UIButton {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -20),
-            heightAnchor.constraint(equalToConstant: 45),
+            heightAnchor.constraint(equalToConstant: 40),
 
             image.widthAnchor.constraint(equalToConstant: 24),
             image.heightAnchor.constraint(equalToConstant: 24)
