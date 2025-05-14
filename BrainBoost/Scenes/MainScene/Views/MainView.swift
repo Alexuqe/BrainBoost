@@ -3,9 +3,10 @@ import UIKit
 final class MainView: UIView {
 
     var onButtonTap: ((Int, Int) -> Void)?
-    var onDifficultyChange: ((DifficultySegmented.Selection) -> Void)?
+    var onDifficultyChange: ((Selection) -> Void)?
+    var onTimerFinished: (() -> Void)?
 
-    private var currentPosition: DifficultySegmented.Selection = .easy
+    private var currentPosition: Selection = .easy
 
     private lazy var scoreView: ScoreView = {
         let view = ScoreView(frame: .zero)
@@ -22,6 +23,16 @@ final class MainView: UIView {
             self?.onDifficultyChange?(selection)
         }
         return segmentedControl
+    }()
+
+    private lazy var timerView: TimerView = {
+        let timer = TimerView()
+        timer.onTimerFinished = { [weak self] in
+            self?.onTimerFinished?()
+        }
+        
+        timer.translatesAutoresizingMaskIntoConstraints = false
+        return timer
     }()
 
     private let gameButtonsBackground: UIView = {
@@ -42,6 +53,24 @@ final class MainView: UIView {
         return stack
     }()
 
+    private let startButton: Button = {
+        let button = Button(style: .startButton)
+        button.onTap = {
+            print("Start")
+        }
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    private let stopButton: Button = {
+        let button = Button(style: .stopButton)
+        button.onTap = {
+            print("Stop")
+        }
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .main
@@ -51,6 +80,7 @@ final class MainView: UIView {
         setupButtonsStack()
         setupConstraints()
         setupButtonActions()
+        huggingPriority()
     }
 
     required init(coder: NSCoder) {
@@ -62,30 +92,37 @@ final class MainView: UIView {
             guard let buttonStack = stack as? ButtonsStackView else { return }
 
             buttonStack.onTapButton = { [weak self] buttonIndex in
+                self?.timerView.startTimer()
                 self?.onButtonTap?(stackIndex, buttonIndex)
             }
         }
     }
 
-    private func switchTime(to selection: DifficultySegmented.Selection) {
+    private func switchTime(to selection: Selection) {
         currentPosition = selection
 
         switch selection {
             case .easy:
                 scoreView.setTitle = "50"
+                timerView.setTimeInterval(50)
             case .medium:
                 scoreView.setTitle = "30"
+                timerView.setTimeInterval(30)
             case .hard:
                 scoreView.setTitle = "15"
+                timerView.setTimeInterval(15)
         }
     }
 
     private func setupLayout() {
         addSubview(scoreView)
         addSubview(segmentedController)
+        addSubview(timerView)
         addSubview(gameButtonsBackground)
 
         gameButtonsBackground.addSubview(gameButtonsStack)
+        gameButtonsBackground.addSubview(stopButton)
+        gameButtonsBackground.addSubview(startButton)
     }
 
     private func setupButtonsStack() {
@@ -109,19 +146,34 @@ final class MainView: UIView {
             segmentedController.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             segmentedController.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
+            timerView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 30),
+            timerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+
             gameButtonsBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
             gameButtonsBackground.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             gameButtonsBackground.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            gameButtonsBackground.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
+            gameButtonsBackground.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 30),
 
             gameButtonsStack.topAnchor.constraint(equalTo: gameButtonsBackground.topAnchor, constant: 20),
             gameButtonsStack.leadingAnchor.constraint(equalTo: gameButtonsBackground.leadingAnchor, constant: 20),
             gameButtonsStack.trailingAnchor.constraint(equalTo: gameButtonsBackground.trailingAnchor, constant: -20),
-            gameButtonsStack.bottomAnchor.constraint(equalTo: gameButtonsBackground.bottomAnchor, constant: -200),
+            gameButtonsStack.bottomAnchor.constraint(equalTo: stopButton.topAnchor, constant: -20),
+
+            stopButton.leadingAnchor.constraint(equalTo: gameButtonsBackground.leadingAnchor, constant: 20),
+            stopButton.bottomAnchor.constraint(equalTo: gameButtonsBackground.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            stopButton.trailingAnchor.constraint(equalTo: startButton.leadingAnchor, constant: -5),
+            stopButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08),
+
+            startButton.trailingAnchor.constraint(equalTo: gameButtonsBackground.trailingAnchor, constant: -20),
+            startButton.bottomAnchor.constraint(equalTo: gameButtonsBackground.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            startButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08),
         ])
     }
-}
 
-#Preview {
-    MainView()
+    private func huggingPriority() {
+        stopButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+
+        startButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        startButton.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    }
 }

@@ -43,7 +43,3 @@ final class ScoreView: UIView {
         ])
     }
 }
-
-#Preview {
-    ScoreView()
-}

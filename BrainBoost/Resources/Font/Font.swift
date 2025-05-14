@@ -19,7 +19,8 @@ enum FontType: String {
 
 extension Font {
     static let heading = Font(font: getFont(fontType: .bold, size: 30))
-    static let subtitle = Font(font: getFont(fontType: .medium, size: 15))
+    static let mediumHeading = Font(font: getFont(fontType: .medium, size: 30))
+    static let subtitle = Font(font: getFont(fontType: .medium, size: 20))
     static let caption = Font(font: getFont(fontType: .medium, size: 15))
     static let number = Font(font: getFont(fontType: .medium, size: 30))
 }

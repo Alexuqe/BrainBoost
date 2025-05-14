@@ -36,7 +36,3 @@ final class ButtonsStackView: UIStackView {
         buttons.forEach { addArrangedSubview($0) }
     }
 }
-
-#Preview {
-    ButtonsStackView()
-}

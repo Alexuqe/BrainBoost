@@ -2,6 +2,11 @@ import UIKit
 
 final class Button: UIButton {
 
+    enum IconPosition {
+        case left
+        case right
+    }
+
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.2) {
@@ -17,6 +22,10 @@ final class Button: UIButton {
     }
 
     var onTap: (() -> Void)?
+
+    private var alphaWhenTouch: CGFloat {
+        isEnabled ? 1.0 : 0.7
+    }
 
     private let style: ButtonsStyle
 
@@ -39,9 +48,16 @@ final class Button: UIButton {
         return imageView
     }()
 
-    private var alphaWhenTouch: CGFloat {
-        isEnabled ? 1.0 : 0.7
+    private var iconImageView: UIImageView {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }
+
+    private lazy var leftIconImageView = iconImageView
+    private lazy var rightIconImageView = iconImageView
+
 
     init(style: ButtonsStyle = .easyDifficultyButton) {
         self.style = style
@@ -80,6 +96,22 @@ final class Button: UIButton {
         }
     }
 
+    func setIcon(_ icon: UIImage?, position: IconPosition = .left) {
+        if let icon {
+            leftIconImageView.image = icon
+            rightIconImageView.image = icon
+
+            leftIconImageView.tintColor = style.textColor
+            rightIconImageView.tintColor = style.textColor
+
+            leftIconImageView.isHidden = position == .right
+            rightIconImageView.isHidden = position == .left
+        } else {
+            leftIconImageView.isHidden = true
+            rightIconImageView.isHidden = true
+        }
+    }
+
     private func setupButton() {
         backgroundColor = style.backgroundColor
         layer.cornerRadius = 15
@@ -92,14 +124,19 @@ final class Button: UIButton {
             setImage(imageView: image)
         }
 
+        if let icon = style.icon {
+            setIcon(icon, position: style.iconPosition ?? .left)
+        }
+
         addAction(UIAction { [weak self] _ in self?.onTap?() }, for: .touchUpInside)
     }
 
     private func setupLayout() {
         addSubview(stackView)
-
+        stackView.addArrangedSubview(leftIconImageView)
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(image)
+        stackView.addArrangedSubview(rightIconImageView)
     }
 
     private func setupConstraints() {
@@ -108,10 +145,12 @@ final class Button: UIButton {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -20),
-            heightAnchor.constraint(equalToConstant: 40),
 
             image.widthAnchor.constraint(equalToConstant: 24),
-            image.heightAnchor.constraint(equalToConstant: 24)
+            image.heightAnchor.constraint(equalToConstant: 24),
+
+            leftIconImageView.widthAnchor.constraint(equalToConstant: 24),
+            rightIconImageView.heightAnchor.constraint(equalToConstant: 24),
         ])
     }
 

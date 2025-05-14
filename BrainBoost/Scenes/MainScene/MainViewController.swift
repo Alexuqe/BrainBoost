@@ -13,6 +13,10 @@ final class MainViewController: UIViewController {
             self?.handleDifficultyChange(difficulty)
         }
 
+        view.onTimerFinished = { [weak self] in
+            self?.handleTimerFinished()
+        }
+
         return view
     }()
 
@@ -29,8 +33,12 @@ final class MainViewController: UIViewController {
         print("Нажата кнопка \(buttonIndex + 1) в стеке \(stackIndex + 1)")
     }
 
-    private func handleDifficultyChange(_ difficulty: DifficultySegmented.Selection) {
+    private func handleDifficultyChange(_ difficulty: Selection) {
         print("Изменена сложность на \(difficulty)")
+    }
+    
+    private func handleTimerFinished() {
+        print("Время вышло!")
     }
 }
 

@@ -1,12 +1,12 @@
 import UIKit
 
-final class DifficultySegmented: UIView {
+enum Selection {
+    case easy
+    case medium
+    case hard
+}
 
-    enum Selection {
-        case easy
-        case medium
-        case hard
-    }
+final class DifficultySegmented: UIView {
 
     var toggleTimer: ((Selection) -> Void)?
 
@@ -49,7 +49,7 @@ final class DifficultySegmented: UIView {
     private let selectedView: UIView = {
         let view = UIView()
         view.backgroundColor = .scoreView
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 14
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -136,7 +136,11 @@ final class DifficultySegmented: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
 
             selectedView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -5),
-            selectedView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5)
+            selectedView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
+
+            easyButton.heightAnchor.constraint(equalToConstant: 40),
+            mediumButton.heightAnchor.constraint(equalToConstant: 40),
+            hardButton.heightAnchor.constraint(equalToConstant: 40),
         ])
 
         selectedLeadingConstraints = selectedView.leadingAnchor.constraint(
