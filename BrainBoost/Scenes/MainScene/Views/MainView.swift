@@ -53,19 +53,19 @@ final class MainView: UIView {
         return stack
     }()
 
-    private let startButton: Button = {
+    private lazy var startButton: Button = {
         let button = Button(style: .startButton)
         button.onTap = {
-            print("Start")
+            self.timerView.startTimer()
         }
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    private let stopButton: Button = {
+    private lazy var stopButton: Button = {
         let button = Button(style: .stopButton)
         button.onTap = {
-            print("Stop")
+            self.timerView.stopTimer()
         }
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -92,7 +92,6 @@ final class MainView: UIView {
             guard let buttonStack = stack as? ButtonsStackView else { return }
 
             buttonStack.onTapButton = { [weak self] buttonIndex in
-                self?.timerView.startTimer()
                 self?.onButtonTap?(stackIndex, buttonIndex)
             }
         }
@@ -126,7 +125,7 @@ final class MainView: UIView {
     }
 
     private func setupButtonsStack() {
-        let stack: [ButtonsStackView] = (0..<3).map { index in
+        let stack: [ButtonsStackView] = (0..<4).map { index in
             let stack = ButtonsStackView()
             stack.translatesAutoresizingMaskIntoConstraints = false
             return stack
@@ -157,16 +156,16 @@ final class MainView: UIView {
             gameButtonsStack.topAnchor.constraint(equalTo: gameButtonsBackground.topAnchor, constant: 20),
             gameButtonsStack.leadingAnchor.constraint(equalTo: gameButtonsBackground.leadingAnchor, constant: 20),
             gameButtonsStack.trailingAnchor.constraint(equalTo: gameButtonsBackground.trailingAnchor, constant: -20),
-            gameButtonsStack.bottomAnchor.constraint(equalTo: stopButton.topAnchor, constant: -20),
+            gameButtonsStack.bottomAnchor.constraint(equalTo: stopButton.topAnchor, constant: -35),
 
             stopButton.leadingAnchor.constraint(equalTo: gameButtonsBackground.leadingAnchor, constant: 20),
             stopButton.bottomAnchor.constraint(equalTo: gameButtonsBackground.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             stopButton.trailingAnchor.constraint(equalTo: startButton.leadingAnchor, constant: -5),
-            stopButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08),
+            stopButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.07),
 
             startButton.trailingAnchor.constraint(equalTo: gameButtonsBackground.trailingAnchor, constant: -20),
             startButton.bottomAnchor.constraint(equalTo: gameButtonsBackground.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            startButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08),
+            startButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.07),
         ])
     }
 

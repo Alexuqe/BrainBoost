@@ -23,9 +23,10 @@ final class ButtonsStackView: UIStackView {
     }
 
     private func addButtons() {
-        let buttons: [Button] = (0..<3).map { index in
+        let buttons: [Button] = (0..<4).map { index in
             let button = Button(style: .numbersButton)
             button.translatesAutoresizingMaskIntoConstraints = false
+            button.widthAnchor.constraint(equalTo: button.heightAnchor).isActive = true
             button.onTap = {
                 self.onTapButton?(index)
             }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CE8835CD2DD3C5C500C1C237 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835CC2DD3C5C200C1C237 /* MainView.swift */; };
 		CE8835CF2DD3D59800C1C237 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835CE2DD3D59400C1C237 /* TimerView.swift */; };
+		CE8835D22DD6411700C1C237 /* MainSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */; };
+		CE8835D42DD6416700C1C237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835D32DD6416100C1C237 /* MainModel.swift */; };
+		CE8835D62DD6445F00C1C237 /* MainSceneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835D52DD6445600C1C237 /* MainSceneProtocols.swift */; };
+		CE8835D82DD6462200C1C237 /* MainSceneInterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8835D72DD6461B00C1C237 /* MainSceneInterator.swift */; };
 		CE9BF23A2DD0D5FB00152118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2312DD0D5FB00152118 /* Assets.xcassets */; };
 		CE9BF23C2DD0D5FB00152118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9BF2342DD0D5FB00152118 /* LaunchScreen.storyboard */; };
 		CE9BF23E2DD0D5FB00152118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */; };
@@ -27,6 +31,10 @@
 /* Begin PBXFileReference section */
 		CE8835CC2DD3C5C200C1C237 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE8835CE2DD3D59400C1C237 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneModel.swift; sourceTree = "<group>"; };
+		CE8835D32DD6416100C1C237 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		CE8835D52DD6445600C1C237 /* MainSceneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneProtocols.swift; sourceTree = "<group>"; };
+		CE8835D72DD6461B00C1C237 /* MainSceneInterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneInterator.swift; sourceTree = "<group>"; };
 		CE9BF2182DD0D5EF00152118 /* BrainBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9BF2302DD0D5FB00152118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9BF2312DD0D5FB00152118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				CE9BF2382DD0D5FB00152118 /* MainViewController.swift */,
+				CE8835D72DD6461B00C1C237 /* MainSceneInterator.swift */,
+				CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */,
+				CE8835D52DD6445600C1C237 /* MainSceneProtocols.swift */,
+				CE8835D32DD6416100C1C237 /* MainModel.swift */,
 				CE8835CB2DD3C5AC00C1C237 /* Views */,
 			);
 			path = MainScene;
@@ -242,6 +254,7 @@
 			files = (
 				CE9BF23E2DD0D5FB00152118 /* AppDelegate.swift in Sources */,
 				CE9BF24B2DD0DD6200152118 /* Font.swift in Sources */,
+				CE8835D22DD6411700C1C237 /* MainSceneModel.swift in Sources */,
 				CE9BF23F2DD0D5FB00152118 /* SceneDelegate.swift in Sources */,
 				CE9BF2402DD0D5FB00152118 /* MainViewController.swift in Sources */,
 				CE9BF2512DD0EF7200152118 /* Button.swift in Sources */,
@@ -249,9 +262,12 @@
 				CE8835CF2DD3D59800C1C237 /* TimerView.swift in Sources */,
 				CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */,
 				CE8835CD2DD3C5C500C1C237 /* MainView.swift in Sources */,
+				CE8835D42DD6416700C1C237 /* MainModel.swift in Sources */,
 				CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */,
 				CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */,
 				CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */,
+				CE8835D82DD6462200C1C237 /* MainSceneInterator.swift in Sources */,
+				CE8835D62DD6445F00C1C237 /* MainSceneProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
