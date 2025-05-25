@@ -52,7 +52,7 @@ extension ButtonsStyle {
     )
 
     static let numbersButton = ButtonsStyle(
-        title: "1",
+        title: "",
         image: nil,
         icon: nil,
         backgroundColor: .main,

@@ -14,6 +14,7 @@ enum Game {
         let matchedPairs: Int
         let totalPairs: Int
         let lastSelectedPosition: MainSceneModel.Position?
+        let secondSelectedPosition: MainSceneModel.Position?
     }
 
     struct ViewModel {

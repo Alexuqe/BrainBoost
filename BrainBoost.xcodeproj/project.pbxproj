@@ -26,6 +26,10 @@
 		CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */; };
 		CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2562DD1001900152118 /* ButtonsStackView.swift */; };
 		CE9BF25A2DD24A0D00152118 /* DifficultySegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */; };
+		CEC249BC2DE35A4900D5C388 /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC249BB2DE35A4200D5C388 /* CardGenerator.swift */; };
+		CEC249C32DE35D2D00D5C388 /* ScoreCalcualtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC249C22DE35D2800D5C388 /* ScoreCalcualtor.swift */; };
+		CEC249C52DE35DCC00D5C388 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC249C42DE35DBF00D5C388 /* MainConfigurator.swift */; };
+		CEC249C72DE35E9D00D5C388 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC249C62DE35E9900D5C388 /* MainPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
 		CE9BF2562DD1001900152118 /* ButtonsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStackView.swift; sourceTree = "<group>"; };
 		CE9BF2592DD24A0300152118 /* DifficultySegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySegmented.swift; sourceTree = "<group>"; };
+		CEC249BB2DE35A4200D5C388 /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
+		CEC249C22DE35D2800D5C388 /* ScoreCalcualtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalcualtor.swift; sourceTree = "<group>"; };
+		CEC249C42DE35DBF00D5C388 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		CEC249C62DE35E9900D5C388 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +76,11 @@
 			children = (
 				CE9BF2382DD0D5FB00152118 /* MainViewController.swift */,
 				CE8835D72DD6461B00C1C237 /* MainSceneInterator.swift */,
-				CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */,
+				CEC249C62DE35E9900D5C388 /* MainPresenter.swift */,
 				CE8835D52DD6445600C1C237 /* MainSceneProtocols.swift */,
+				CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */,
 				CE8835D32DD6416100C1C237 /* MainModel.swift */,
+				CEC249C42DE35DBF00D5C388 /* MainConfigurator.swift */,
 				CE8835CB2DD3C5AC00C1C237 /* Views */,
 			);
 			path = MainScene;
@@ -109,6 +119,7 @@
 			children = (
 				CE9BF2412DD0D62700152118 /* App */,
 				CE9BF2422DD0D64300152118 /* Scenes */,
+				CEC249BF2DE35D0D00D5C388 /* Generators */,
 				CE9BF24C2DD0E1FA00152118 /* Components */,
 				CE9BF2442DD0D65F00152118 /* LaunchScreen */,
 				CE9BF2432DD0D65400152118 /* Resources */,
@@ -176,6 +187,15 @@
 				CE9BF2532DD0EFD200152118 /* ButtonsStyle.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CEC249BF2DE35D0D00D5C388 /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				CEC249BB2DE35A4200D5C388 /* CardGenerator.swift */,
+				CEC249C22DE35D2800D5C388 /* ScoreCalcualtor.swift */,
+			);
+			path = Generators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,13 +280,17 @@
 				CE9BF2512DD0EF7200152118 /* Button.swift in Sources */,
 				CE9BF25A2DD24A0D00152118 /* DifficultySegmented.swift in Sources */,
 				CE8835CF2DD3D59800C1C237 /* TimerView.swift in Sources */,
+				CEC249C32DE35D2D00D5C388 /* ScoreCalcualtor.swift in Sources */,
+				CEC249C52DE35DCC00D5C388 /* MainConfigurator.swift in Sources */,
 				CE9BF2492DD0DB7700152118 /* FontNameManager.swift in Sources */,
 				CE8835CD2DD3C5C500C1C237 /* MainView.swift in Sources */,
 				CE8835D42DD6416700C1C237 /* MainModel.swift in Sources */,
 				CE9BF2572DD1001D00152118 /* ButtonsStackView.swift in Sources */,
 				CE9BF2542DD0EFE100152118 /* ButtonsStyle.swift in Sources */,
+				CEC249BC2DE35A4900D5C388 /* CardGenerator.swift in Sources */,
 				CE9BF24E2DD0E20500152118 /* ScoreView.swift in Sources */,
 				CE8835D82DD6462200C1C237 /* MainSceneInterator.swift in Sources */,
+				CEC249C72DE35E9D00D5C388 /* MainPresenter.swift in Sources */,
 				CE8835D62DD6445F00C1C237 /* MainSceneProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

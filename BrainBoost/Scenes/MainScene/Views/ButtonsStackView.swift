@@ -27,10 +27,11 @@ final class ButtonsStackView: UIStackView {
             let button = Button(style: .numbersButton)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.widthAnchor.constraint(equalTo: button.heightAnchor).isActive = true
+            button.setTitle(title: "")
+            button.isEnabled = true
             button.onTap = {
                 self.onTapButton?(index)
             }
-
             return button
         }
 

@@ -92,7 +92,7 @@ final class TimerView: UIView {
     @objc private func timerTapped() {
         timeInterval -= 1
         
-        if timeInterval <= 0 {
+        if timeInterval == 0 {
             stopTimer()
             onTimerFinished?()
         }

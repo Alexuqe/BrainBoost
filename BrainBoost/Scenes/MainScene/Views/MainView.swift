@@ -5,6 +5,8 @@ final class MainView: UIView {
     var onButtonTap: ((Int, Int) -> Void)?
     var onDifficultyChange: ((Selection) -> Void)?
     var onTimerFinished: (() -> Void)?
+    var onStartButtonTap: (() -> Void)?
+    var onStopButtonTap: (() -> Void)?
 
     private var currentPosition: Selection = .easy
 
@@ -30,7 +32,7 @@ final class MainView: UIView {
         timer.onTimerFinished = { [weak self] in
             self?.onTimerFinished?()
         }
-        
+
         timer.translatesAutoresizingMaskIntoConstraints = false
         return timer
     }()
@@ -55,8 +57,8 @@ final class MainView: UIView {
 
     private lazy var startButton: Button = {
         let button = Button(style: .startButton)
-        button.onTap = {
-            self.timerView.startTimer()
+        button.onTap = { [weak self] in
+            self?.onStartButtonTap?()
         }
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -64,8 +66,8 @@ final class MainView: UIView {
 
     private lazy var stopButton: Button = {
         let button = Button(style: .stopButton)
-        button.onTap = {
-            self.timerView.stopTimer()
+        button.onTap = { [weak self] in
+            self?.onStopButtonTap?()
         }
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -87,6 +89,16 @@ final class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func setupButtonsStack() {
+        let stack: [ButtonsStackView] = (0..<4).map { index in
+            let stack = ButtonsStackView()
+            stack.translatesAutoresizingMaskIntoConstraints = false
+            return stack
+        }
+
+        stack.forEach { gameButtonsStack.addArrangedSubview($0) }
+    }
+
     private func setupButtonActions() {
         gameButtonsStack.arrangedSubviews.enumerated().forEach { stackIndex, stack in
             guard let buttonStack = stack as? ButtonsStackView else { return }
@@ -102,13 +114,10 @@ final class MainView: UIView {
 
         switch selection {
             case .easy:
-                scoreView.setTitle = "50"
                 timerView.setTimeInterval(50)
             case .medium:
-                scoreView.setTitle = "30"
                 timerView.setTimeInterval(30)
             case .hard:
-                scoreView.setTitle = "15"
                 timerView.setTimeInterval(15)
         }
     }
@@ -122,16 +131,6 @@ final class MainView: UIView {
         gameButtonsBackground.addSubview(gameButtonsStack)
         gameButtonsBackground.addSubview(stopButton)
         gameButtonsBackground.addSubview(startButton)
-    }
-
-    private func setupButtonsStack() {
-        let stack: [ButtonsStackView] = (0..<4).map { index in
-            let stack = ButtonsStackView()
-            stack.translatesAutoresizingMaskIntoConstraints = false
-            return stack
-        }
-
-        stack.forEach { gameButtonsStack.addArrangedSubview($0) }
     }
 
     private func setupConstraints() {
@@ -174,5 +173,88 @@ final class MainView: UIView {
 
         startButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         startButton.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    }
+}
+
+extension MainView {
+    func updateScore(score: String) {
+        scoreView.setTitle = score
+    }
+
+    func updateCard(
+        at position: MainSceneModel.Position,
+        value: Int?,
+        isEnabled: Bool,
+        isMatched: Bool,
+        shouldAnimate: Bool
+    ) {
+        guard
+            let buttonStack = gameButtonsStack.arrangedSubviews[position.row] as? ButtonsStackView,
+            let button = buttonStack.arrangedSubviews[position.column] as? Button
+        else { return }
+
+        if shouldAnimate {
+            animateCard(card: button, value: value, isEnabled: isEnabled, isMatched: isMatched)
+        } else {
+            button.setTitle(title: value.map(String.init) ?? "")
+            button.isEnabled = isEnabled
+            button.backgroundColor = isMatched ? .scoreView : .main
+        }
+    }
+
+    func animateCard(card: Button, value: Int?, isEnabled: Bool, isMatched: Bool) {
+        UIView.transition(
+            with: card,
+            duration: 0.3,
+            options: .transitionFlipFromLeft
+        ) { [weak self] in
+            self?.updateCardWithoutAnimation(
+                card,
+                value: value,
+                isEnabled: isEnabled,
+                isMatched: isMatched
+            )
+        }
+    }
+
+    func updateCardWithoutAnimation(_ card: Button, value: Int?, isEnabled: Bool, isMatched: Bool) {
+        card.setTitle(title: value.map(String.init) ?? "")
+        card.isEnabled = isEnabled
+        card.backgroundColor = isMatched ? .scoreView : .main
+    }
+
+    func enableGameButton(isEnabled: Bool) {
+        gameButtonsStack.arrangedSubviews.forEach { stack in
+            guard let buttonStack = stack as? ButtonsStackView else { return }
+            buttonStack.isUserInteractionEnabled = isEnabled
+        }
+
+        startButton.isEnabled = !isEnabled
+        stopButton.isEnabled = isEnabled
+    }
+
+    func resetGame() {
+        gameButtonsStack.arrangedSubviews.forEach { stack in
+            guard let buttonStack = stack as? ButtonsStackView else { return }
+
+            buttonStack.arrangedSubviews.forEach { button in
+                guard let button = button as? Button else { return }
+                self.updateCardWithoutAnimation(
+                    button,
+                    value: nil,
+                    isEnabled: true,
+                    isMatched: false
+                )
+            }
+        }
+        stopTimer()
+    }
+
+    func startTimer() {
+        timerView.startTimer()
+    }
+
+    func stopTimer() {
+        timerView.stopTimer()
     }
 }

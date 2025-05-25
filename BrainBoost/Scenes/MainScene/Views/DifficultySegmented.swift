@@ -118,7 +118,7 @@ final class DifficultySegmented: UIView {
         ) {
             self.layoutIfNeeded()
 
-            selectedButton.setTextColor(.timerView)
+            selectedButton.setTextColor(.white)
             selectedButton.backgroundColor = .scoreView
 
             unselectedButton.forEach { button in
