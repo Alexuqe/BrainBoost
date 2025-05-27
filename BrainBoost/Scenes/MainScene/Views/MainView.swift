@@ -170,7 +170,6 @@ final class MainView: UIView {
 
     private func huggingPriority() {
         stopButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-
         startButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         startButton.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }

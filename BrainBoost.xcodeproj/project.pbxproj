@@ -78,9 +78,8 @@
 				CE8835D72DD6461B00C1C237 /* MainSceneInterator.swift */,
 				CEC249C62DE35E9900D5C388 /* MainPresenter.swift */,
 				CE8835D52DD6445600C1C237 /* MainSceneProtocols.swift */,
-				CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */,
-				CE8835D32DD6416100C1C237 /* MainModel.swift */,
 				CEC249C42DE35DBF00D5C388 /* MainConfigurator.swift */,
+				CEC249C82DE3A5C600D5C388 /* Models */,
 				CE8835CB2DD3C5AC00C1C237 /* Views */,
 			);
 			path = MainScene;
@@ -196,6 +195,15 @@
 				CEC249C22DE35D2800D5C388 /* ScoreCalcualtor.swift */,
 			);
 			path = Generators;
+			sourceTree = "<group>";
+		};
+		CEC249C82DE3A5C600D5C388 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE8835D12DD6410E00C1C237 /* MainSceneModel.swift */,
+				CE8835D32DD6416100C1C237 /* MainModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
